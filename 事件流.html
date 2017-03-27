@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#boss{
+				width:200px;
+				height: 200px;
+				background: pink;
+			}
+			#box{
+				width:100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+	<div id="boss">
+		<div id="box">
+			<button>点我我是来测试事件流的</button>
+			
+		</div>
+	</div>
+	<script type="text/javascript">
+//		document.querySelector('button').onclick=function(){
+//			console.log(1)
+//		}
+//		document.querySelector('#box').onclick=function(){
+//			console.log(2)
+//		}
+//		document.querySelector('#boss').onclick=function(){
+//			console.log(3)
+//		}
+		
+		document.querySelector('button').addEventListener('click',function(){
+			console.log(1)
+		},true)
+			
+		document.querySelector('#box').addEventListener('click',function(){
+			console.log(2)
+		},true)
+		
+			
+		document.querySelector('#boss').addEventListener('click',function(){
+			console.log(3)
+		},true)
+		
+		
+	</script>
+	</body>
+</html>

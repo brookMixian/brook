@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<my></my>
+			
+		</div>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			Vue.component('my',{
+				template:'<div @click="click">{{name}}</div>',
+				data:function(){
+					return {
+						name:'小明'
+					}
+					
+				},
+				methods:{
+					click:function(){
+						alert(this.name)
+					}
+				}
+			})
+			new Vue({
+				el:'#box',
+				data:{
+					
+				}
+			})
+		</script>
+	</body>
+</html>

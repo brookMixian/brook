@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn1">点击我loalStorage</button>
+		<button id="btn2">点击我跳转</button>
+		<script type="text/javascript">
+//			if(!window.localstorage){
+//				alert('支持localStorage');
+//				return false;
+//			}else{
+//				alert("猜猜");
+//				var storage=window.localStorage;
+//          //写入a字段
+//	            storage["a"]=1;
+//	            //写入b字段
+//	            storage.a=1;
+//	            //写入c字段
+//	            storage.setItem("c",3);
+//	            console.log(typeof storage["a"]);
+//	            console.log(typeof storage["b"]);
+//	            console.log(typeof storage["c"]);
+//			}
+			document.querySelector('#btn1').addEventListener('click',function(){
+				window.location.href='index.html';
+				localStorage.setItem('name','钟沐阳')
+				
+				
+			})
+			document.querySelector('#btn2').addEventListener('click',function(){
+				window.location.href='数组去重.html';
+				
+			})
+			
+			
+		</script>
+	</body>
+</html>

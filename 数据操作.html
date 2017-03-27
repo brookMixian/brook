@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//求数组的和
+			var arr=[1,2,3,4,5,6,7,8,9,10];
+			
+			var one=arr.reduce(function(a,b){
+				return a+b;
+			})
+		document.write(one);
+		
+			//1-100的数，求除了被7整除的数之外数的和
+			var num=0;
+			
+			for(var i=0;i<101;i++){
+				
+				if(i%7==0){
+					
+					console.log(i+'<br>')
+					continue
+				}
+				num+=i;
+				
+			}
+			
+			
+			console.log(num)
+			
+			// 1-100的数  ，求除了被7整除的数之外的和 方法2
+			var sum=0;
+			var one=new Array(100);
+			function my(arr){
+				for(var i=0;i<arr.length;i++){
+					if(i%7==0){
+						continue
+					}
+					sum+=i;
+					
+				}
+				return arr;
+			}
+			
+			var two=my(one);
+			
+			console.log(two);
+			
+			
+		
+		</script>
+	</body>
+</html>

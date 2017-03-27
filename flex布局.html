@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>flex布局</title>
+		<style type="text/css">
+			body{
+				background: #333;
+				display: flex;
+			}
+			body>div{
+				display: flex;
+				width: 100px;
+				height:100px;
+				background: #fff;
+				margin: 10px;
+				padding: 10px;
+				box-sizing: border-box;
+				border-radius: 10px;
+			}
+			span{
+				display: block;
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				background: red;
+			}
+			
+			.one{
+				flex-direction: column;
+				justify-content: center;/*水平居中*/
+				
+				align-items: center;垂直居中
+				
+			}
+			.two {
+				justify-content: space-between;/*左右有空白*/
+				/*justify-content: space-around; 周围都有空白*/
+			}
+			
+			.two span:nth-of-type(2){
+				align-self: flex-end;/**/
+			}
+			.three{
+				justify-content: space-between;
+					/*align-items: auto;*/
+			}
+			
+			.three span:nth-of-type(2){
+				align-self: center;
+			}
+			.three span:nth-of-type(3){
+				/*align-items: auto;*/
+				align-self: flex-end;
+				
+			}
+			.fouse,.fixe,.sex{
+				flex-direction:column ;
+				justify-content: space-between;
+			}
+			.fouse div,.fixe div,.sex div{
+				display: flex;
+				justify-content: space-between;
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="one">
+			<span></span>
+		
+		</div>
+		<div class="two">
+			<span></span>
+			<span></span>
+			
+		</div>
+		<div class="three">
+			<span></span>
+			<span></span>
+			<span></span>
+	
+		</div>
+		
+		<div class="fouse">
+			<div class="fouse-one">
+				<span></span>
+				<span></span>
+			</div>
+			<div class="fouse-two">
+				<span></span>
+				<span></span>
+			</div>
+			
+		</div>
+		<div class="fixe">
+			<div >
+				<span></span>
+				<span></span>
+			</div>
+			<div>
+				<span></span>
+			</div>
+			<div >
+				<span></span>
+				<span></span>
+			</div>
+			
+		</div>
+		
+		<div class="sex">
+			
+			<div>
+				<span></span>
+				<span></span>
+			</div>
+			
+			<div>
+				<span></span>
+				<span></span>
+			</div>
+			
+			<div>
+				<span></span>
+				<span></span>
+			</div>
+			
+		</div>
+	</body>
+</html>

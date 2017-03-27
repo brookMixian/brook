@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{max-width: 1000px;margin: auto;}
+			table{width: 100%;}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<p>公司后台系统添加人员</p>
+			<!--<div class="boss">-->
+				<div>
+					<label>姓名：<input type="text" v-model='header.name'></label>
+				</div>
+				<div >
+					<label>年龄：<input type="text" v-model='header.age'></label>
+					
+				</div>
+				<div >
+					<label>部门：<input type="text" v-model='header.tap'></label>
+				</div>
+				
+				<button @click='add'>添加</button>
+			<!--</div>-->
+				<div class="boss">
+					<table border="1px solid red" cellpadding="0" cellspacing="0">
+						<thead>
+							<tr style="text-align: center;">
+								<th>姓名aaa</th>
+								<th>年龄</th>
+								<th>部门</th>
+								<th>删除成员</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr v-for='(item,index) in sel'>
+								<td>{{index.name}}</td>
+								<td>{{index.age}}</td>
+								<td>{{index.tap}}</td>
+								<td> 
+									<button @click='remove(item)'>删除</button>
+								</td>
+								
+							</tr>
+							<tr>
+								<td colspan="4" v-show='sel.length==0'>暂无数据</td>
+							</tr>
+						</tbody>
+						
+					</table>
+					
+				</div>
+			
+			
+		</div>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			new Vue({
+				el:'#box',
+				data:{
+					header:{
+						name:'',
+						age:'',
+						tap:''
+					},
+					sel:[
+						{
+							name:'钟沐阳',
+							age:'26',
+							tap:'技术部'
+						},
+						{
+							name:'程龙',
+							age:'25',
+							tap:'产品部'
+							
+						}
+						
+					
+					
+					]
+					
+				},
+				methods:{
+					add:function(){
+						if(this.header.name!=''&&this.header.age!=''&&this.header.tap!=''){
+							
+							this.sel.push({
+								name:this.header.name,
+								age:this.header.age,
+								tap:this.header.tap
+								
+							})
+							
+							this.header.name='';
+							this.header.age='';
+							this.header.tap=''
+							
+						}else{
+							alert('你的信息不完整')
+						}
+						
+						
+					},
+					remove:function(item){
+						var is=confirm('你确认删除吗');
+						
+						if(is){
+							this.sel.splice(item,1)
+						}
+						
+					}
+					
+				}
+			})
+		</script>
+	</body>
+</html>

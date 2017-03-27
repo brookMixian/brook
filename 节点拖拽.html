@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				background: red;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="box">
+			
+		</div>
+		<script type="text/javascript">
+			//js的五种
+			(function(ement){
+				var pre={
+					left:0,
+					top:0,
+					cX:0,
+					cY:0,
+					preo:false
+				}
+				
+				var lefts=ement.getBoundingClientRect().left;
+				console.log(lefts)
+				var tops=ement.getBoundingClientRect().top;
+				console.log(tops)
+				
+				
+				
+				pre.left = lefts !== "auto" ? lefts : 0;  
+       			 pre.top = tops !== "auto" ? tops : 0;  
+				
+				console.log('文档相对与浏览窗口的left值 ',lefts)
+					
+				//鼠标按下的时候
+				ement.onmousedown=function(e){
+					
+					pre.preo=true;
+					
+					pre.cX=e.clientX;
+					pre.cY=e.clientY;
+					
+				}
+				
+				document.onmousemove=function(e){
+					
+					if(pre.preo){
+						var nowX=e.clientX,
+							nowY=e.clientY;
+					
+						var disX=nowX-pre.cX,
+							disY=nowY-pre.cY;
+						
+					ement.style.left=parseInt(pre.left)+disX+'px';
+					ement.style.top=parseInt(pre.top)+disY+'px';
+					}
+					
+				}
+				
+				document.onmouseup=function(){
+					pre.preo=false;
+					var lefts=ement.getBoundingClientRect().left;
+					var tops=ement.getBoundingClientRect().top;
+						pre.left = lefts !== "auto" ? lefts : 0;  
+       			 		pre.top = tops !== "auto" ? tops : 0;  
+					
+					
+					
+				}
+				
+				
+				
+				
+				
+				
+			}(document.getElementById('box')))
+		</script>
+	</body>
+</html>
